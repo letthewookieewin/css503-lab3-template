@@ -10,16 +10,11 @@
 
 using namespace std;
 
-struct timeval start, end2;  // maintain starting and finishing wall time.
+struct timeval start, end2; // maintain starting and finishing wall time.
 
-void startTimer()
-
-{
-  gettimeofday(&start, NULL);
-}
+void startTimer() { gettimeofday(&start, NULL); }
 
 void stopTimer(const char *str)
-
 {
   gettimeofday(&end2, NULL);
 
@@ -32,10 +27,8 @@ void stopTimer(const char *str)
 }
 
 int main(int argc, char *argv[])
-
 {
   if (argc != 3)
-
   {
     cerr << "usage: lab3 filename bytes" << endl;
 
@@ -45,7 +38,6 @@ int main(int argc, char *argv[])
   int bytes = atoi(argv[2]);
 
   if (bytes < 1)
-
   {
     cerr << "usage: lab3 filename bytes" << endl;
 
@@ -63,7 +55,6 @@ int main(int argc, char *argv[])
   int fd = open(filename, O_RDONLY);
 
   if (fd == -1)
-
   {
     cerr << filename << " not found" << endl;
 
